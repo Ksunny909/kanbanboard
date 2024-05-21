@@ -1,0 +1,47 @@
+{% extends 'base_auth.html' %}
+{% load static %}
+{% block content %}
+<div class="row">
+	<div class="col-md-4"></div>
+	<div class="col-md-4">
+		<div class="card mt-5">
+
+			<div class="card-body">
+
+				<div class="card-title py-3 ">
+					<h4> Вход</h4>
+				</div>
+
+				<form action="{% url 'login' %}" method="post">
+					{% csrf_token %}
+
+					{% include 'partials/_messages.html' %}
+
+					<div class="form-group py-2">
+						<input type="email" name="email" placeholder="Email" class="form-control form-control-sm" id="emailField"
+							value="{{fieldValues.email}}" />
+					</div>
+
+					<div class="emailFeedBackArea invalid-feedback" style="display:none"></div>
+					<div class="form-group pt-2">
+						<input type="password" name="password" placeholder="Пароль" class="form-control form-control-sm"
+							id="passwordField">
+						<small class="float-end py-2 showPasswordToggle">Показать</small>
+					</div>
+
+					<input type="submit" value="Войти" class="btn btn-block btn-primary submit-btn"
+						style="width:100%" />
+				</form>
+				<div >
+					<span class="text-lead lead">Нет аккаунта?</span><a class="authen" href="{% url 'register' %}" ms-3>Зарегистрироваться</a> <br>
+				</div>
+				<div>
+					<span class="text-lead lead">Забыли пароль?</span><a class="authen" href="{% url 'register' %}">Восстановить пароль</a>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4">
+	</div>
+</div>
+<script src="{% static 'js/register.js' %}"></script>
+{% endblock content %}

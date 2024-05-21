@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>
+	Канбан-доска
+</h1>
+
+<div class="container">
+	<div class="kanban-board">
+		<div class="kanban-block" id="todo">
+			<strong>Нужно сделать</strong>
+			<hr class="my-3">
+		</div>
+		<div class="kanban-block" id="inprogress">
+			<strong>В работе</strong>
+			<hr class="my-3">
+		</div>
+		<div class="kanban-block" id="done">
+			<strong>На проверке</strong>
+			<hr class="my-3">
+		</div>
+		<div class="kanban-block" id="done">
+			<strong>Готово</strong>
+			<hr class="my-3">
+		</div>
+	</div>
+</div>
+{% endblock content %}
